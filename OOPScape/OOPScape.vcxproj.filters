@@ -30,6 +30,12 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Chaser.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Chaser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h">
