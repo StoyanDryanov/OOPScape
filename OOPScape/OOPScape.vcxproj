@@ -136,6 +136,7 @@
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rogue.cpp" />
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,7 @@
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Rogue.h" />
     <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <ItemGroup>

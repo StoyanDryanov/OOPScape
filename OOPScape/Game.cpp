@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Chaser.h"
 #include "Console.h"
+#include "Rogue.h"
 
 #include <iostream>
 #include <algorithm>
@@ -58,17 +59,25 @@ void Game::run()
             break;
         }
 
-        updateEnemies();
+		Rogue* rogue = dynamic_cast<Rogue*>(m_hero.get());
+		bool invisible = rogue && rogue->isInvisible();
 
-        if (checkLoss())
+        if (!invisible)
         {
-            render();
-            std::cout << "\n*** An enemy caught you! You lose! ***\n";
-            m_running = false;
-            break;
+			updateEnemies();
+            
+            if (checkLoss())
+            {
+                render();
+                std::cout << "\n*** An enemy caught you! You lose! ***\n";
+                m_running = false;
+                break;
+            }
         }
 
         m_hero->tickCooldown();
+
+		if (rogue) rogue->tickInvisibility();
     }
 }
 
@@ -104,6 +113,8 @@ void Game::render() const
             case 'F': Console::setColor(Console::GREEN);        break;
             case 'E': Console::setColor(Console::RED);          break;
             case 'W': Console::setColor(Console::CYAN);         break;
+			case 'K': Console::setColor(Console::BLUE);         break;
+			case 'R': Console::setColor(Console::MAGENTA);      break;
             default:  Console::setColor(Console::GRAY);         break;
             }
             std::cout << c;
@@ -126,6 +137,16 @@ void Game::render() const
         std::cout << " | Ability: " << m_hero->getCooldown() << " turns remaining";
     }
     Console::reset();
+
+    Rogue* rogue = dynamic_cast<Rogue*>(m_hero.get());
+    if (rogue && rogue->isInvisible())
+    {
+        Console::setColor(Console::MAGENTA);
+        std::cout << " | INVISIBLE: " << rogue->getInvisibilityTurns() << " turns left";
+        Console::reset();
+    }
+
+
     std::cout << "\n";
     std::cout << "Commands: L R U D | OOP (ability) | Q (quit)\n";
 }

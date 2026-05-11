@@ -49,6 +49,9 @@
     <ClCompile Include="Knight.cpp">
       <Filter>Hero</Filter>
     </ClCompile>
+    <ClCompile Include="Rogue.cpp">
+      <Filter>Hero</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Knight.h">
+      <Filter>Hero</Filter>
+    </ClInclude>
+    <ClInclude Include="Rogue.h">
       <Filter>Hero</Filter>
     </ClInclude>
   </ItemGroup>

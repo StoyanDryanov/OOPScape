@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Wizard.h"
 #include "Knight.h"
+#include "Rogue.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -18,7 +19,7 @@ int main()
         return 1;
     }
 
-    game.setHero(std::make_unique<Knight>(Point{ 0, 0 }));
+    game.setHero(std::make_unique<Rogue>(Point{ 0, 0 }));
 
     game.run();
 
