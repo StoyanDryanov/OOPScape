@@ -67,6 +67,7 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Console.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="level1.txt">

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Chaser.h"
+#include "Console.h"
 
 #include <iostream>
 #include <algorithm>
@@ -73,6 +74,8 @@ void Game::run()
 
 void Game::render() const
 {
+    Console::clear();
+
     int n = m_board.getSize();
 
     std::vector<std::string> display(n);
@@ -92,16 +95,37 @@ void Game::render() const
     std::cout << "\n";
     for (int y = 0; y < n; y++)
     {
-        for (int x = 0; x < n; x++)
-            std::cout << display[y][x];
+        for (int x = 0; x < n; x++) 
+        {
+            char c = display[y][x];
+            switch (c) 
+            {
+            case '*': Console::setColor(Console::DARK_GRAY);    break;
+            case 'F': Console::setColor(Console::GREEN);        break;
+            case 'E': Console::setColor(Console::RED);          break;
+            case 'W': Console::setColor(Console::CYAN);         break;
+            default:  Console::setColor(Console::GRAY);         break;
+            }
+            std::cout << c;
+        }
+        Console::reset();
         std::cout << "\n";
     }
 
+    Console::reset();
+
     std::cout << "\nHero [" << m_hero->getSymbol() << "]";
     if (m_hero->canUseAbility())
+    { 
+        Console::setColor(Console::GREEN);
         std::cout << " | Ability: READY";
-    else
+    }
+    else 
+    {
+        Console::setColor(Console::RED);
         std::cout << " | Ability: " << m_hero->getCooldown() << " turns remaining";
+    }
+    Console::reset();
     std::cout << "\n";
     std::cout << "Commands: L R U D | OOP (ability) | Q (quit)\n";
 }
