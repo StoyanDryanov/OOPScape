@@ -136,6 +136,7 @@
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Patroller.cpp" />
     <ClCompile Include="Rogue.cpp" />
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
@@ -147,12 +148,14 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Knight.h" />
+    <ClInclude Include="Patroller.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rogue.h" />
     <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="level1.txt" />
+    <Text Include="level2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

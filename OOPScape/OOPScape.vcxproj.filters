@@ -52,6 +52,9 @@
     <ClCompile Include="Rogue.cpp">
       <Filter>Hero</Filter>
     </ClCompile>
+    <ClCompile Include="Patroller.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -80,9 +83,15 @@
     <ClInclude Include="Rogue.h">
       <Filter>Hero</Filter>
     </ClInclude>
+    <ClInclude Include="Patroller.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="level1.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="level2.txt">
       <Filter>Levels</Filter>
     </Text>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Chaser.h"
+#include "Patroller.h"
 #include "Console.h"
 #include "Rogue.h"
 
@@ -18,6 +19,10 @@ bool Game::loadLevel(const std::string& filename)
     m_enemies.clear();
     for (const Point& p : m_board.getEnemyStarts())
         m_enemies.push_back(std::make_unique<Chaser>(p));
+
+    if (m_board.getPatrolPoints().size() >= 2)
+        m_enemies.push_back(std::make_unique<Patroller>(m_board.getPatrolPoints()));
+
 
     return true;
 }

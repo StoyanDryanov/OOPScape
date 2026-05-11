@@ -49,7 +49,7 @@ bool Board::load(const std::string& filename)
         for (int col = 0; col < m_size; col++)
         {
             char c = line[col];
-            if (c != '*' && c != ' ' && c != 'S' && c != 'F' && c != 'E' && c != 'P')
+            if (c != '*' && c != ' ' && c != 'S' && c != 'F' && c != 'E' && c != 'P' && !(c >= '1' && c <= '9'))
             {
                 std::cerr << "Error: Invalid character '" << c
                     << "' at row " << row << ", col " << col << ".\n";
@@ -59,6 +59,15 @@ bool Board::load(const std::string& filename)
             if (c == 'S') { countS++; m_heroStart = { col, row }; line[col] = ' '; }
             else if (c == 'F') { countF++; m_exitPos = { col, row }; }
             else if (c == 'E') { m_enemyStarts.push_back({ col, row }); line[col] = ' '; }
+            else if (c >= '1' && c <= '9')
+            {
+                int index = c - '1';
+                if (index >= (int)m_patrolPoints.size())
+                    m_patrolPoints.resize(index + 1, { 0, 0 });
+                m_patrolPoints[index] = { col, row };
+                line[col] = ' ';
+            }
+
         }
 
         m_grid.push_back(line);

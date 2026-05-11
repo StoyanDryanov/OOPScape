@@ -13,7 +13,7 @@ int main()
 
     Game game;
 
-    if (!game.loadLevel("level1.txt"))
+    if (!game.loadLevel("level2.txt"))
     {
         std::cerr << "Failed to load level.\n";
         return 1;
