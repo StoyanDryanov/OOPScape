@@ -56,9 +56,9 @@ bool Board::load(const std::string& filename)
                 return false;
             }
 
-            if (c == 'S') { countS++; m_heroStart = { col, row }; }
+            if (c == 'S') { countS++; m_heroStart = { col, row }; line[col] = ' '; }
             else if (c == 'F') { countF++; m_exitPos = { col, row }; }
-            else if (c == 'E') { m_enemyStarts.push_back({ col, row }); }
+            else if (c == 'E') { m_enemyStarts.push_back({ col, row }); line[col] = ' '; }
         }
 
         m_grid.push_back(line);
