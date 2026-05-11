@@ -20,13 +20,13 @@ public:
 
 private:
     void render() const;
-    void handleInput();
+    bool handleInput();
     bool checkWin()  const;
     bool checkLoss() const;
     void updateEnemies();
 
-    Board                            m_board;
-    std::unique_ptr<Hero>            m_hero;
+    Board                               m_board;
+    std::unique_ptr<Hero>               m_hero;
     std::vector<std::unique_ptr<Enemy>> m_enemies;
 
     bool m_running = false;

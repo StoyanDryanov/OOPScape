@@ -34,9 +34,11 @@ void Game::run()
     while (m_running)
     {
         render();
-        handleInput();
+
+		bool validTurn = handleInput();
 
         if (!m_running) break;
+        if (!validTurn) continue;
 
         if (checkWin())
         {
@@ -104,7 +106,7 @@ void Game::render() const
     std::cout << "Commands: L R U D | OOP (ability) | Q (quit)\n";
 }
 
-void Game::handleInput()
+bool Game::handleInput()
 {
     std::string input;
     std::cout << "> ";
@@ -117,7 +119,7 @@ void Game::handleInput()
     {
         std::cout << "Quitting...\n";
         m_running = false;
-        return;
+        return true;
     }
 
     if (input == "OOP")
@@ -126,16 +128,21 @@ void Game::handleInput()
             m_hero->useAbility(m_board);
         else
             std::cout << "Ability not ready! (" << m_hero->getCooldown() << " turns remaining)\n";
-        return;
+        return false;
     }
 
     if (input.size() == 1 && (input[0] == 'L' || input[0] == 'R' || input[0] == 'U' || input[0] == 'D'))
     {
+		Point before = m_hero->getPos();
         m_hero->move(input[0], m_board);
-        return;
+        if (m_hero->getPos() == before)
+            return false;
+        
+        return true;
     }
 
     std::cout << "Unknown command. Use L, R, U, D, OOP or Q.\n";
+    return false;
 }
 
 bool Game::checkWin() const
