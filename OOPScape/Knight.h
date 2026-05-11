@@ -2,10 +2,10 @@
 
 #include "Hero.h"
 
-class Wizard : public Hero
+class Knight : public Hero
 {
 public:
-    Wizard(Point pos);
+    Knight(Point pos);
 
     void useAbility(Board& board, std::vector<std::unique_ptr<Enemy>>& enemies) override;
 };

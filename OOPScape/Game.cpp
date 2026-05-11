@@ -149,7 +149,7 @@ bool Game::handleInput()
     if (input == "OOP")
     {
         if (m_hero->canUseAbility())
-            m_hero->useAbility(m_board);
+            m_hero->useAbility(m_board, m_enemies);
         else
             std::cout << "Ability not ready! (" << m_hero->getCooldown() << " turns remaining)\n";
         return false;

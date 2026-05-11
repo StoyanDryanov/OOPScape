@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Entity.h"
+#include "Enemy.h"
+#include <vector>
+#include <memory>
 
 class Hero : public Entity
 {
@@ -9,7 +12,7 @@ public:
 
     void move(char direction, Board& board) override;
 
-    virtual void useAbility(Board& board) = 0;
+    virtual void useAbility(Board& board, std::vector<std::unique_ptr<Enemy>>& enemies) = 0;
 
     int  getCooldown()    const { return m_cooldown; }
     int  getCooldownMax() const { return m_cooldownMax; }

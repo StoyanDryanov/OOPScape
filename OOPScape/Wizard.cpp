@@ -9,7 +9,7 @@ Wizard::Wizard(Point pos)
     m_cooldownMax = 3;
 }
 
-void Wizard::useAbility(Board& board)
+void Wizard::useAbility(Board& board, std::vector<std::unique_ptr<Enemy>>& enemies)
 {
     int n = board.getSize();
 
