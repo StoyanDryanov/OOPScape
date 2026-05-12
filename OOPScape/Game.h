@@ -11,12 +11,14 @@
 class Game
 {
 public:
-    Game();
+    Game() = default;
 
     bool loadLevel(const std::string& filename);
     void setHero(std::unique_ptr<Hero> hero);
 
     void run();
+
+	bool isWon() const { return m_won; }
 
 private:
     void render() const;

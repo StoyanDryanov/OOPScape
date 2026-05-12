@@ -7,10 +7,6 @@
 #include <iostream>
 #include <algorithm>
 
-Game::Game()
-{
-}
-
 bool Game::loadLevel(const std::string& filename)
 {
     if (!m_board.load(filename))

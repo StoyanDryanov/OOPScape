@@ -94,5 +94,6 @@
     <Text Include="level2.txt">
       <Filter>Levels</Filter>
     </Text>
+    <Text Include="level3.txt" />
   </ItemGroup>
 </Project>
