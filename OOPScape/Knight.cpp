@@ -9,8 +9,8 @@ Knight::Knight(Point pos)
 
 void Knight::useAbility(Board& board, std::vector<std::unique_ptr<Enemy>>& enemies)
 {
-    const int dx[4] = { -1, 1,  0, 0 };
-    const int dy[4] = { 0, 0, -1, 1 };
+    const int dx[8] = { -1, -1, -1,  0, 0,  1, 1, 1 };
+    const int dy[8] = { -1,  0,  1, -1, 1, -1, 0, 1 };
 
     int killCount = 0;
 
@@ -18,7 +18,7 @@ void Knight::useAbility(Board& board, std::vector<std::unique_ptr<Enemy>>& enemi
     {
         if (!enemy->isAlive()) continue;
 
-        for (int k = 0; k < 4; k++)
+        for (int k = 0; k < 8; k++)
         {
             int nx = m_pos.x + dx[k];
             int ny = m_pos.y + dy[k];
