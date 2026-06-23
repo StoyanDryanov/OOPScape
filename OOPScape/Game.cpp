@@ -52,13 +52,13 @@ void Game::run()
             break;
         }
 
-        if (checkLoss())
-        {
-            render();
-            std::cout << "\n*** An enemy caught you! You lose! ***\n";
-            m_running = false;
-            break;
-        }
+        //if (checkLoss())
+        //{
+        //    render();
+        //    std::cout << "\n*** An enemy caught you! You lose! ***\n";
+        //    m_running = false;
+        //    break;
+        //}
 
 		Rogue* rogue = dynamic_cast<Rogue*>(m_hero.get());
 		bool invisible = rogue && rogue->isInvisible();

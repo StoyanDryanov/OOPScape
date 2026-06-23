@@ -1,3 +1,6 @@
+// OOPScape
+// Стоян Златев Дрянов, ФН: 5MI0600612
+
 #include "Game.h"
 #include "Wizard.h"
 #include "Knight.h"
@@ -51,7 +54,8 @@ int main()
     std::vector<std::string> levels = {
         "level1.txt",
         "level2.txt",
-		"level3.txt"
+		"level3.txt",
+        "level4.txt"
     };
 
     auto hero = pickHero();

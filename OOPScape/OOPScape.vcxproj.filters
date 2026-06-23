@@ -103,6 +103,8 @@
     <Text Include="level3.txt">
       <Filter>Levels</Filter>
     </Text>
-    <Text Include="level4.txt" />
+    <Text Include="level4.txt">
+      <Filter>Levels</Filter>
+    </Text>
   </ItemGroup>
 </Project>
