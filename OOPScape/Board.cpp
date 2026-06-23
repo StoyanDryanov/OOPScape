@@ -23,6 +23,7 @@ bool Board::load(const std::string& filename)
 
     m_grid.clear();
     m_enemyStarts.clear();
+    m_patrolPoints.clear();
 
     int countS = 0;
     int countF = 0;
