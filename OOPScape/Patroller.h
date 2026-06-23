@@ -11,8 +11,6 @@ public:
     void update(const Point& heroPos, Board& board) override;
 
 private:
-    bool bfsStep(const Point& target, Board& board);
-
     std::vector<Point> m_path;
     int                m_targetIndex = 1;
     bool               m_forward = true;

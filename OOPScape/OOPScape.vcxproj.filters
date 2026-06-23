@@ -55,6 +55,9 @@
     <ClCompile Include="Patroller.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="PathFinding.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -86,6 +89,9 @@
     <ClInclude Include="Patroller.h">
       <Filter>Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="PathFinding.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="level1.txt">
@@ -94,6 +100,9 @@
     <Text Include="level2.txt">
       <Filter>Levels</Filter>
     </Text>
-    <Text Include="level3.txt" />
+    <Text Include="level3.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="level4.txt" />
   </ItemGroup>
 </Project>
